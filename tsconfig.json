@@ -1,28 +1,19 @@
 {
 	"include": ["src/**/*"],
 	"exclude": ["node_modules/*", "coverage/*"],
-	"ts-node": {
-		"transpileOnly": true,
-		"require": ["typescript-transform-paths/register"]
-	},
 	"compilerOptions": {
-		"target": "esnext",
-		"module": "esnext",
+		"target": "ES2015",
+		"module": "CommonJS",
 		"lib": ["dom", "esnext"],
 		"moduleResolution": "node",
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
 		"importsNotUsedAsValues": "error",
+		"allowSyntheticDefaultImports":true,
 		"incremental": true,
 		"types": ["node"],
-                "baseUrl": ".",
-		"paths": {
-			"$src/*": ["./src/*"]
-		},
+        "baseUrl": ".",
 		"isolatedModules": false,
-		"plugins": [
-			{ "transform": "typescript-transform-paths" },
-			{ "transform": "typescript-transform-paths", "afterDeclarations": true }
-		]
+		"outDir": "dist"
 	}
 }
